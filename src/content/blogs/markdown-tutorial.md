@@ -1,5 +1,5 @@
 ---
-title: "Your Post Title"
+title: "Markdown Examples"
 date: "2026-09-03"
 tags:
   - writing

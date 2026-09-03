@@ -1,25 +1,10 @@
 # Author Website Template (React + Vite)
 
-A reusable author-site starter with:
-
-- Main pages: Home, Portfolio, Blog, About, Press Kit, Contact
-- Markdown-powered blog posts with frontmatter metadata
-- GitHub Pages deployment via GitHub Actions
-
-## Quick Start
-
-```bash
-npm install
-npm run build
-```
-
-You can run `npm run dev` when you want local preview, but it is not required for setup.
-
 ## Blog Authoring
 
 Add markdown files to `src/content/blogs`.
 
-Each post must start with YAML frontmatter in this standard format:
+Each post must start with frontmatter in this format:
 
 ```md
 ---
@@ -35,7 +20,7 @@ author: "Author Name"
 
 Then write normal markdown content below it.
 
-File name becomes the URL slug:
+Filename becomes the URL slug:
 
 - `src/content/blogs/my-new-post.md` -> `/blog/my-new-post`
 
@@ -47,12 +32,8 @@ Note: files starting with `_` are ignored by the blog loader (so the template it
 
 ## GitHub Pages Deployment
 
-This template includes `.github/workflows/deploy.yml`.
+The website auto updates using Github Actions
 
-To enable Pages:
+## Edit site details 
+You'll fine them in `src/lib/siteconfig.ts`
 
-1. Push to `main`
-2. In GitHub repo settings, set Pages source to `GitHub Actions`
-3. The workflow builds and deploys automatically on every push to `main`
-
-The Vite base path is auto-configured for GitHub Pages inside `vite.config.ts`.

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
+import { SEO } from '../components/SEO'
 import { blogPosts } from '../lib/blog'
+import { siteConfig } from '../lib/siteConfig'
 
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString(undefined, {
@@ -12,8 +14,13 @@ function formatDate(date: string): string {
 export function BlogPage() {
   return (
     <section className="page">
+      <SEO
+        title="Blog"
+        description={`Articles, updates, and behind-the-scenes writing from ${siteConfig.authorName}.`}
+        canonical={`${siteConfig.siteUrl}/blog`}
+      />
       <h1>Blog</h1>
-      <p>Posts are loaded from markdown files in `src/content/blogs`.</p>
+      <p>Welcome to me blog! Stay tuned for the coolest updates on my writing (and research!!!).</p>
 
       <ul className="blog-list">
         {blogPosts.map((post) => (
