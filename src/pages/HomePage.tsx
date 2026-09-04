@@ -8,7 +8,7 @@ export function HomePage() {
         description={siteConfig.defaultDescription}
         canonical={siteConfig.siteUrl}
       />
-      <h1>Author Name</h1>
+      <h1>C. M. Leslie</h1>
       <p>A clean home page introducing the author and latest updates.</p>
       <p>
         Under construction.

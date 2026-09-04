@@ -27,7 +27,7 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     sitemap({
-      hostname: 'https://cleslieauthor.com',
+      hostname: 'https://analoguegonedigital.co.uk/cleslieauthor',
       dynamicRoutes: [...staticRoutes, ...blogRoutes],
     }),
   ],

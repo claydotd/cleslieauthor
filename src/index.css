@@ -6,16 +6,23 @@
 
 :root {
   /* Colour palette */
-  --color-bg:           #f8fafc;
+  --dark-amethyst: #301a4bff;
+  --pacific-blue: #6db1bfff;
+  --lavender-blush: #ffeaecff;
+  --cotton-candy: #f39a9dff;
+  --hunter-green: #3f6c51ff;
+
+  /* Colour palette */
+  --color-bg:           var(--lavender-blush);
   --color-surface:      #ffffff;
   --color-border:       #e5e7eb;
   --color-text:         #1f2937;
   --color-text-muted:   #6b7280;
   --color-text-subtle:  #4b5563;
-  --color-text-strong:  #111827;
-  --color-link:         #1d4ed8;
-  --color-tag-bg:       #e0f2fe;
-  --color-tag-text:     #075985;
+  --color-text-strong:  var(--dark-amethyst);
+  --color-link:         var(--pacific-blue);
+  --color-tag-bg:       var(--lavender-blush);
+  --color-tag-text:     var(--pacific-blue);
   --color-placeholder:  #e5e5e5;
   --color-placeholder-text: #999999;
 
@@ -30,19 +37,19 @@
   --space-10: 2.5rem;
   --space-16: 4rem;
 
-  /* Typography */
-  --font-sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --text-sm:   0.8rem;
-  --text-base: 1rem;
-  --text-md:   0.95rem;
-  --text-lg:   1.2rem;
-  --text-xl:   1.25rem;
-  --leading:   1.5;
+  /* Typography — serif stack modelled on book faces (Garamond) */
+  --font-serif: "EB Garamond", Garamond, "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --text-sm:   0.875rem;
+  --text-base: 1.125rem;
+  --text-md:   1.05rem;
+  --text-lg:   1.35rem;
+  --text-xl:   1.4rem;
+  --leading:   1.65;
 
   /* Radii */
   --radius-sm:  0.5rem;
   --radius-md:  0.75rem;
-  --radius-lg:  8px;
+  --radius-lg:  1rem;
   --radius-pill: 999px;
 
   /* Layout */
@@ -64,7 +71,7 @@
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: var(--text-base);
   font-weight: 400;
   line-height: var(--leading);
@@ -108,7 +115,7 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(6px);
 }
@@ -141,6 +148,12 @@ a {
   text-decoration: none;
   color: var(--color-text-subtle);
   font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--color-text-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
 }
 
 .nav-link.active {
@@ -273,7 +286,7 @@ a {
 .blog-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-5);
 }
 
@@ -318,7 +331,7 @@ a {
 .blog-post {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   padding: var(--space-6);
 }
 

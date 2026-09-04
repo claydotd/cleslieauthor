@@ -5,7 +5,7 @@ tags:
   - writing
   - updates
 excerpt: "A short summary or excerpt."
-author: "Author Name"
+author: "C. D. Leslie"
 ---
 
 **Hello!**

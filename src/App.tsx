@@ -50,7 +50,7 @@ function App() {
     <div className="site-shell">
       <header className="site-header">
         <div className="container">
-          <p className="site-title">Author Name</p>
+          <p className="site-title">C. M. Leslie</p>
 
           {/* Desktop nav */}
           <nav aria-label="Main navigation" className="nav-desktop">
