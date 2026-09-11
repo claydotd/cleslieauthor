@@ -15,7 +15,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 ### Currently
 
 - Working on a new manuscript
-- Researching archival material
+- Digging through the archives
 - Occasional essays on the [blog](/blog)
 
 ---
