@@ -8,28 +8,20 @@ excerpt: "A short summary or excerpt."
 author: "Author Name"
 ---
 
-**Hello!**
+**Hello!** Copy this file, rename it, and replace the frontmatter. The body is ordinary Markdown.
 
-This is some Markdown Text.
-Quick guide:
-# H1
-## H2
-### H3
-> blockquote\
-*italicized text*\
-**bold text**
+## Quick guide
 
-use a backslash (\) at the end of a line to create\
-a new line\
-within a paragraph
+- *italicised text*
+- **bold text**
+- [a link](https://www.markdownguide.org/cheat-sheet/)
+- a quote:
 
-> it works in blockquotes too\
-look at this blockquoted *italicized text* and **bold text**\
-markdown is pretty cool I guess.
+> It works in blockquotes too.\
+> Line breaks use a backslash at the end of the line.
 
-[This is a link.](https://www.markdownguide.org/cheat-sheet/) Click on it for a helpful cheat sheet.
+```md
+Write a new file in this folder to publish a post.
+```
 
-Below is an image.
-![This is an image](https://analoguegonedigital.co.uk/digillama/assets/art-2-DgNWQ7uH.png)
-
-
+![Optional image](https://analoguegonedigital.co.uk/digillama/assets/art-2-DgNWQ7uH.png)

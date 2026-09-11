@@ -1,5 +1,7 @@
+import { MarkdownContent } from '../components/MarkdownContent'
 import { SEO } from '../components/SEO'
-import { siteConfig } from '../lib/siteConfig'
+import contactContent from '../content/contact.md?raw'
+import { canonicalUrl, siteConfig } from '../lib/siteConfig'
 
 export function ContactPage() {
   return (
@@ -7,10 +9,9 @@ export function ContactPage() {
       <SEO
         title="Contact"
         description={`Get in touch with ${siteConfig.authorName}.`}
-        canonical={`${siteConfig.siteUrl}/contact`}
+        canonical={canonicalUrl('/contact')}
       />
-      <h1>Contact</h1>
-      <p>Contact information goes here.</p>
+      <MarkdownContent>{contactContent}</MarkdownContent>
     </section>
   )
 }

@@ -5,12 +5,11 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import sitemap from 'vite-plugin-sitemap'
 
-// https://vite.dev/config/
-const repositoryName = (process.env.GITHUB_REPOSITORY ?? '').split('/')[1]
+const siteBase = '/cleslieauthor/'
 
 // Static routes for sitemap generation.
 // When you add new pages, add their paths here.
-const staticRoutes = ['/', '/portfolio', '/blog', '/about', '/press-kit', '/contact']
+const staticRoutes = ['/portfolio', '/blog', '/about', '/press-kit', '/contact']
 
 // Dynamically collect blog post slugs at build time so each post
 // gets its own <url> entry in the sitemap.
@@ -20,15 +19,21 @@ const blogRoutes = readdirSync(blogsDir)
   .map((f) => `/blog/${f.replace(/\.md$/, '')}`)
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS
-    ? repositoryName ? `/${repositoryName}/` : '/'
-    : '/',
+  base: siteBase,
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     sitemap({
-      hostname: 'https://analoguegonedigital.co.uk/cleslieauthor',
+      hostname: 'https://analoguegonedigital.co.uk',
+      basePath: 'cleslieauthor',
       dynamicRoutes: [...staticRoutes, ...blogRoutes],
+      generateRobotsTxt: false,
     }),
+    {
+      name: 'sitemap-link-base',
+      transformIndexHtml(html: string) {
+        return html.replaceAll('href="/sitemap.xml"', `href="${siteBase}sitemap.xml"`)
+      },
+    },
   ],
 })

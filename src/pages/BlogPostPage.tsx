@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async'
-import ReactMarkdown from 'react-markdown'
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { MarkdownContent } from '../components/MarkdownContent'
 import { SEO } from '../components/SEO'
 import { getPostBySlug } from '../lib/blog'
-import { siteConfig } from '../lib/siteConfig'
+import { canonicalUrl, siteConfig } from '../lib/siteConfig'
 
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString(undefined, {
@@ -22,7 +22,7 @@ export function BlogPostPage() {
   }
 
   const isoDate = new Date(post.date).toISOString()
-  const canonicalUrl = `${siteConfig.siteUrl}/blog/${post.slug}`
+  const postUrl = canonicalUrl(`/blog/${post.slug}`)
   const description = post.excerpt ?? post.content.slice(0, 160)
 
   const jsonLd = {
@@ -35,7 +35,7 @@ export function BlogPostPage() {
       '@type': 'Person',
       name: post.author ?? siteConfig.authorName,
     },
-    url: canonicalUrl,
+    url: postUrl,
     keywords: post.tags.join(', '),
   }
 
@@ -44,7 +44,7 @@ export function BlogPostPage() {
       <SEO
         title={post.title}
         description={description}
-        canonical={canonicalUrl}
+        canonical={postUrl}
         ogType="article"
       />
       {/* Article-specific meta not covered by the shared SEO component */}
@@ -68,12 +68,12 @@ export function BlogPostPage() {
       </div>
       <div className="blog-tags">
         {post.tags.map((tag) => (
-          <span key={tag} className="blog-tag">
+          <Link key={tag} className="blog-tag" to={`/blog?tag=${encodeURIComponent(tag)}`}>
             #{tag}
-          </span>
+          </Link>
         ))}
       </div>
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      <MarkdownContent>{post.content}</MarkdownContent>
     </article>
   )
 }

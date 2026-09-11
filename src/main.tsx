@@ -5,10 +5,12 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <App />
       </BrowserRouter>
     </HelmetProvider>

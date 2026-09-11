@@ -1,5 +1,7 @@
+import { MarkdownContent } from '../components/MarkdownContent'
 import { SEO } from '../components/SEO'
-import { siteConfig } from '../lib/siteConfig'
+import portfolioContent from '../content/portfolio.md?raw'
+import { canonicalUrl, siteConfig } from '../lib/siteConfig'
 
 export function PortfolioPage() {
   return (
@@ -7,12 +9,9 @@ export function PortfolioPage() {
       <SEO
         title="Portfolio"
         description={`Browse the published works and writing portfolio of ${siteConfig.authorName}.`}
-        canonical={`${siteConfig.siteUrl}/portfolio`}
+        canonical={canonicalUrl('/portfolio')}
       />
-      <h1>Portfolio</h1>
-      <p>
-        Portfolio goes here. Work in progress.
-      </p>
+      <MarkdownContent>{portfolioContent}</MarkdownContent>
     </section>
   )
 }

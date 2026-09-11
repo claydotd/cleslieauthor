@@ -1,7 +1,7 @@
-import ReactMarkdown from 'react-markdown'
+import { MarkdownContent } from '../components/MarkdownContent'
 import { SEO } from '../components/SEO'
 import aboutContent from '../content/about.md?raw'
-import { siteConfig } from '../lib/siteConfig'
+import { canonicalUrl, siteConfig } from '../lib/siteConfig'
 
 export function AboutPage() {
   return (
@@ -9,11 +9,11 @@ export function AboutPage() {
       <SEO
         title="About"
         description={`Learn more about ${siteConfig.authorName} — author, researcher, and writer.`}
-        canonical={`${siteConfig.siteUrl}/about`}
+        canonical={canonicalUrl('/about')}
       />
       <div className="about-layout">
         <div className="about-content">
-          <ReactMarkdown>{aboutContent}</ReactMarkdown>
+          <MarkdownContent>{aboutContent}</MarkdownContent>
         </div>
         <div className="about-photo-placeholder">
           Photo placeholder

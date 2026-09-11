@@ -68,3 +68,7 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug)
 }
 
+export const blogTags: string[] = [
+  ...new Set(blogPosts.flatMap((post) => post.tags)),
+].sort((a, b) => a.localeCompare(b))
+

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { Link, NavLink, Route, Routes } from 'react-router-dom'
 import { AboutPage } from './pages/AboutPage'
 import { BlogPage } from './pages/BlogPage'
 import { BlogPostPage } from './pages/BlogPostPage'
@@ -7,6 +7,7 @@ import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { PortfolioPage } from './pages/PortfolioPage'
 import { PressKitPage } from './pages/PressKitPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 const navItems = [
   { to: '/', label: 'Home', end: true },
@@ -50,7 +51,9 @@ function App() {
     <div className="site-shell">
       <header className="site-header">
         <div className="container">
-          <p className="site-title">C. M. Leslie</p>
+          <Link to="/" className="site-title">
+            C. M. Leslie
+          </Link>
 
           {/* Desktop nav */}
           <nav aria-label="Main navigation" className="nav-desktop">
@@ -90,6 +93,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/press-kit" element={<PressKitPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

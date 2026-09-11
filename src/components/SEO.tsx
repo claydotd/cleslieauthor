@@ -36,6 +36,7 @@ export function SEO({
       <meta name="description" content={description} />
       <meta name="author" content={siteConfig.authorName} />
       <link rel="canonical" href={fullCanonical} />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href={`${siteConfig.siteUrl}/sitemap.xml`} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Open Graph */}

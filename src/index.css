@@ -21,6 +21,7 @@
   --color-text-subtle:  #4b5563;
   --color-text-strong:  var(--dark-amethyst);
   --color-link:         var(--pacific-blue);
+  --color-link-hover:   var(--hunter-green);
   --color-tag-bg:       var(--lavender-blush);
   --color-tag-text:     var(--pacific-blue);
   --color-placeholder:  #e5e5e5;
@@ -133,6 +134,12 @@ a {
   margin: 0;
   font-size: var(--text-lg);
   font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--color-link-hover);
 }
 
 .nav-list {
@@ -272,13 +279,318 @@ a {
 
 
 /* ============================================================
+   MARKDOWN PROSE
+   ============================================================ */
+
+.markdown {
+  max-width: 100%;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  color: var(--color-text-strong);
+  line-height: 1.3;
+}
+
+.markdown h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.markdown h2 {
+  margin: var(--space-8) 0 var(--space-3);
+  font-size: var(--text-xl);
+}
+
+.markdown h3 {
+  margin: var(--space-6) 0 var(--space-2);
+  font-size: var(--text-lg);
+}
+
+.markdown h4 {
+  margin: var(--space-5) 0 var(--space-2);
+  font-size: var(--text-md);
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown pre,
+.markdown table {
+  margin: var(--space-3) 0;
+}
+
+.markdown a {
+  color: var(--color-link);
+  text-underline-offset: 0.2rem;
+}
+
+.markdown a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.4rem;
+}
+
+.markdown li {
+  margin: var(--space-1) 0;
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  margin: var(--space-1) 0;
+}
+
+.markdown input[type="checkbox"] {
+  margin-right: var(--space-2);
+  accent-color: var(--dark-amethyst);
+}
+
+.markdown blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: var(--space-1) 0 var(--space-1) var(--space-4);
+  border-left: 3px solid var(--cotton-candy);
+  color: var(--color-text-subtle);
+  font-style: italic;
+}
+
+.markdown hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-8) 0;
+}
+
+.markdown img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0;
+}
+
+.markdown code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--color-tag-bg);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+
+.markdown pre {
+  overflow-x: auto;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.markdown pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-md);
+}
+
+.markdown th,
+.markdown td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.markdown th {
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.markdown del {
+  color: var(--color-text-muted);
+}
+
+
+/* ============================================================
+   HOME — latest posts
+   ============================================================ */
+
+.home-latest {
+  margin-top: var(--space-10);
+}
+
+.home-latest h2 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-xl);
+  color: var(--color-text-strong);
+  line-height: 1.3;
+}
+
+.home-latest-preview {
+  display: block;
+  color: var(--color-link);
+  text-decoration: none;
+  text-underline-offset: 0.2rem;
+}
+
+.home-latest-preview:hover,
+.home-latest-preview:focus-visible {
+  text-decoration: underline;
+  color: var(--color-link-hover);
+}
+
+.home-latest-preview:focus-visible {
+  outline: 2px solid var(--pacific-blue);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.home-latest-preview h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: inherit;
+}
+
+.home-latest-preview p {
+  margin: var(--space-3) 0 0;
+}
+
+
+/* ============================================================
    BLOG LIST
    ============================================================ */
+
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: var(--space-8);
+  row-gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+}
+
+.blog-filter-row,
+.blog-sort-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-4);
+  row-gap: var(--space-2);
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.page .blog-filters-label {
+  margin: 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.blog-filter {
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.blog-filter:hover,
+.blog-filter.is-active {
+  color: var(--color-text-strong);
+}
+
+.blog-sort-row {
+  margin-left: auto;
+}
+
+.blog-sort {
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0 1.15rem 0 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1.2 1.3 6 6.1l4.8-4.8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.1rem center;
+  background-size: 0.7em;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.blog-sort:hover {
+  color: var(--color-text-strong);
+}
+
+@media (max-width: 640px) {
+  .blog-sort-row {
+    margin-left: 0;
+  }
+}
+
+.blog-filter:focus-visible,
+.blog-sort:focus-visible,
+.blog-tag:focus-visible,
+.blog-empty-reset:focus-visible {
+  outline: 2px solid var(--pacific-blue);
+  outline-offset: 2px;
+}
+
+.page .blog-filter-count {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.page .blog-empty {
+  margin: var(--space-6) 0 0;
+  color: var(--color-text-muted);
+}
+
+.blog-empty-reset {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-link);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
 
 .blog-list {
   list-style: none;
   padding: 0;
-  margin: var(--space-6) 0 0;
+  margin: var(--space-4) 0 0;
   display: grid;
   gap: var(--space-4);
 }
@@ -316,11 +628,28 @@ a {
 }
 
 .blog-tag {
+  appearance: none;
+  font-family: inherit;
   font-size: var(--text-sm);
+  line-height: 1.4;
   padding: var(--space-1) var(--space-2);
+  border: 0;
   border-radius: var(--radius-pill);
   background: var(--color-tag-bg);
   color: var(--color-tag-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.blog-tag:hover {
+  background: var(--cotton-candy);
+  color: var(--dark-amethyst);
+}
+
+.blog-tag.is-active {
+  background: var(--dark-amethyst);
+  color: var(--lavender-blush);
 }
 
 
@@ -335,14 +664,14 @@ a {
   padding: var(--space-6);
 }
 
-.blog-post article h2,
-.blog-post article h3 {
+.blog-post .markdown h2,
+.blog-post .markdown h3 {
   margin-top: var(--space-6);
 }
 
-.blog-post article p,
-.blog-post article li {
-  color: #374151; /* one step lighter than --color-text */
+.blog-post .markdown p,
+.blog-post .markdown li {
+  color: #374151;
 }
 
 .back-link {
@@ -351,6 +680,9 @@ a {
   color: var(--color-link);
 }
 
+.back-link:hover {
+  color: var(--color-link-hover);
+}
 
 /* ============================================================
    ABOUT PAGE
