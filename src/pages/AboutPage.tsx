@@ -1,6 +1,7 @@
 import { MarkdownContent } from '../components/MarkdownContent'
 import { SEO } from '../components/SEO'
 import aboutContent from '../content/about.md?raw'
+import aboutPhoto from '../content/aboutphoto.webp'
 import { canonicalUrl, siteConfig } from '../lib/siteConfig'
 
 export function AboutPage() {
@@ -15,9 +16,13 @@ export function AboutPage() {
         <div className="about-content">
           <MarkdownContent>{aboutContent}</MarkdownContent>
         </div>
-        <div className="about-photo-placeholder">
-          Photo placeholder
-        </div>
+        <img
+          className="about-photo"
+          src={aboutPhoto}
+          alt={`${siteConfig.authorName}`}
+          width={900}
+          height={1227}
+        />
       </div>
     </section>
   )
