@@ -251,10 +251,9 @@ a {
     flex-direction: column-reverse;
   }
 
-  .about-photo-placeholder {
+  .about-photo {
     width: 100%;
     max-width: 280px;
-    aspect-ratio: 1 / 1;
   }
 
   /* Blog post padding */
@@ -699,17 +698,13 @@ a {
   min-width: 0;
 }
 
-.about-photo-placeholder {
+.about-photo {
   flex-shrink: 0;
   width: 260px;
   aspect-ratio: 3 / 4;
-  background: var(--color-placeholder);
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-placeholder-text);
-  font-size: var(--text-sm);
 }
 
 
