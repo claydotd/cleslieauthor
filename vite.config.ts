@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import sitemap from 'vite-plugin-sitemap'
 
-const siteBase = '/cleslieauthor/'
+const siteBase = '/'
 
 // Static routes for sitemap generation.
 // When you add new pages, add their paths here.
@@ -24,7 +24,7 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     sitemap({
-      hostname: 'https://analoguegonedigital.co.uk',
+      hostname: 'https://cmleslie.scot',
       basePath: '/',
       dynamicRoutes: [...staticRoutes, ...blogRoutes],
       generateRobotsTxt: false,
