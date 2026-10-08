@@ -1,1 +1,1 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. **Welcome to my blog!**
+**Welcome to my blog** where I occasionally review books and talk about interesting things I find while working on my manuscripts!

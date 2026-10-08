@@ -21,7 +21,7 @@ export function AboutPage() {
           src={aboutPhoto}
           alt={`${siteConfig.authorName}`}
           width={900}
-          height={1227}
+          height={900}
         />
       </div>
     </section>

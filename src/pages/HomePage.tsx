@@ -4,6 +4,7 @@ import { SEO } from '../components/SEO'
 import homeContent from '../content/home.md?raw'
 import { blogPosts } from '../lib/blog'
 import { siteConfig } from '../lib/siteConfig'
+import aboutPhoto from '../content/aboutphoto.webp'
 
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString(undefined, {
@@ -22,10 +23,20 @@ export function HomePage() {
         description={siteConfig.defaultDescription}
         canonical={siteConfig.siteUrl}
       />
-      <MarkdownContent>{homeContent}</MarkdownContent>
-
       {latestPost ? (
         <div className="home-latest">
+      <div className="about-layout">
+        <div className="about-content">
+          <MarkdownContent>{homeContent}</MarkdownContent>
+        </div>
+        <img
+          className="about-photo"
+          src={aboutPhoto}
+          alt={`${siteConfig.authorName}`}
+          width={900}
+          height={900}
+        />
+      </div>
           <h2>Latest from the blog</h2>
           <Link to={`/blog/${latestPost.slug}`} className="home-latest-preview">
             <h3>{latestPost.title}</h3>

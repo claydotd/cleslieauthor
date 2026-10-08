@@ -246,16 +246,6 @@ a {
     padding-bottom: var(--space-3);
   }
 
-  /* Stack about layout */
-  .about-layout {
-    flex-direction: column-reverse;
-  }
-
-  .about-photo {
-    width: 100%;
-    max-width: 280px;
-  }
-
   /* Blog post padding */
   .blog-post {
     padding: var(--space-4);
@@ -708,6 +698,17 @@ a {
 }
 
 
+@media (max-width: 640px) {
+  /* Stack about layout */
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+  }
+}
 /* ============================================================
    FOOTER
    ============================================================ */

@@ -11,10 +11,7 @@ import { NotFoundPage } from './pages/NotFoundPage'
 
 const navItems = [
   { to: '/', label: 'Home', end: true },
-  { to: '/portfolio', label: 'Portfolio' },
   { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
-  { to: '/press-kit', label: 'Press Kit' },
   { to: '/contact', label: 'Contact' },
 ]
 
