@@ -4,7 +4,7 @@
  */
 export const siteConfig = {
   /** The canonical origin of the site (no trailing slash). */
-  siteUrl: 'https://analoguegonedigital.co.uk/cleslieauthor',
+  siteUrl: 'https://cmleslie.scot',
 
   /** Default page title (used when no per-page title is set). */
   siteName: 'C. M. Leslie - Author',
